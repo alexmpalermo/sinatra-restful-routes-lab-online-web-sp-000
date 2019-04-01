@@ -27,11 +27,9 @@ get '/recipes/:id' do
 end
 
   get '/recipes/:id/edit' do
-    if @recipe = Recipe.find_by_id(params[:id])
+    @recipe = Recipe.find_by_id(params[:id])
       erb :edit 
-    else 
-      redirect '/recipes'
-  end
+   
   end
   
   patch '/recipes/:id' do 
